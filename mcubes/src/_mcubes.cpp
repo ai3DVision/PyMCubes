@@ -1549,6 +1549,8 @@ static const char __pyx_k_ValueError[] = "ValueError";
 static const char __pyx_k_ImportError[] = "ImportError";
 static const char __pyx_k_RuntimeError[] = "RuntimeError";
 static const char __pyx_k_marching_cubes[] = "marching_cubes";
+static const char __pyx_k_marching_cubes2[] = "marching_cubes2";
+static const char __pyx_k_marching_cubes3[] = "marching_cubes3";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_marching_cubes_func[] = "marching_cubes_func";
 static const char __pyx_k_mcubes_src__mcubes_pyx[] = "mcubes/src/_mcubes.pyx";
@@ -1574,6 +1576,8 @@ static PyObject *__pyx_n_s_isovalue;
 static PyObject *__pyx_n_s_lower;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_marching_cubes;
+static PyObject *__pyx_n_s_marching_cubes2;
+static PyObject *__pyx_n_s_marching_cubes3;
 static PyObject *__pyx_n_s_marching_cubes_func;
 static PyObject *__pyx_n_s_mcubes;
 static PyObject *__pyx_kp_s_mcubes_src__mcubes_pyx;
@@ -1594,7 +1598,9 @@ static PyObject *__pyx_n_s_upper;
 static PyObject *__pyx_n_s_verts;
 static PyObject *__pyx_n_s_volume;
 static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_volume, float __pyx_v_isovalue); /* proto */
-static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_lower, PyObject *__pyx_v_upper, int __pyx_v_numx, int __pyx_v_numy, int __pyx_v_numz, PyObject *__pyx_v_f, double __pyx_v_isovalue); /* proto */
+static PyObject *__pyx_pf_7_mcubes_2marching_cubes2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_volume, float __pyx_v_isovalue); /* proto */
+static PyObject *__pyx_pf_7_mcubes_4marching_cubes3(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_volume, float __pyx_v_isovalue); /* proto */
+static PyObject *__pyx_pf_7_mcubes_6marching_cubes_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_lower, PyObject *__pyx_v_upper, int __pyx_v_numx, int __pyx_v_numy, int __pyx_v_numz, PyObject *__pyx_v_f, double __pyx_v_isovalue); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static PyObject *__pyx_int_3;
@@ -1613,11 +1619,19 @@ static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
 static PyObject *__pyx_tuple__13;
 static PyObject *__pyx_tuple__14;
+static PyObject *__pyx_tuple__15;
 static PyObject *__pyx_tuple__16;
-static PyObject *__pyx_codeobj__15;
-static PyObject *__pyx_codeobj__17;
+static PyObject *__pyx_tuple__17;
+static PyObject *__pyx_tuple__18;
+static PyObject *__pyx_tuple__20;
+static PyObject *__pyx_tuple__22;
+static PyObject *__pyx_tuple__24;
+static PyObject *__pyx_codeobj__19;
+static PyObject *__pyx_codeobj__21;
+static PyObject *__pyx_codeobj__23;
+static PyObject *__pyx_codeobj__25;
 
-/* "_mcubes.pyx":20
+/* "_mcubes.pyx":22
  *     cdef object c_marching_cubes_func "marching_cubes_func"(tuple, tuple, int, int, int, object, double) except +
  * 
  * def marching_cubes(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
@@ -1658,11 +1672,11 @@ static PyObject *__pyx_pw_7_mcubes_1marching_cubes(PyObject *__pyx_self, PyObjec
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_isovalue)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes", 1, 2, 2, 1); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes", 1, 2, 2, 1); __PYX_ERR(0, 22, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes") < 0)) __PYX_ERR(0, 20, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes") < 0)) __PYX_ERR(0, 22, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1671,17 +1685,17 @@ static PyObject *__pyx_pw_7_mcubes_1marching_cubes(PyObject *__pyx_self, PyObjec
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_volume = ((PyArrayObject *)values[0]);
-    __pyx_v_isovalue = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_isovalue == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 20, __pyx_L3_error)
+    __pyx_v_isovalue = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_isovalue == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("marching_cubes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 20, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("marching_cubes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_mcubes.marching_cubes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_volume), __pyx_ptype_5numpy_ndarray, 1, "volume", 0))) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_volume), __pyx_ptype_5numpy_ndarray, 1, "volume", 0))) __PYX_ERR(0, 22, __pyx_L1_error)
   __pyx_r = __pyx_pf_7_mcubes_marching_cubes(__pyx_self, __pyx_v_volume, __pyx_v_isovalue);
 
   /* function exit code */
@@ -1705,7 +1719,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
   PyObject *(*__pyx_t_5)(PyObject *);
   __Pyx_RefNannySetupContext("marching_cubes", 0);
 
-  /* "_mcubes.pyx":22
+  /* "_mcubes.pyx":24
  * def marching_cubes(np.ndarray volume, float isovalue):
  * 
  *     verts, faces = c_marching_cubes(volume, isovalue)             # <<<<<<<<<<<<<<
@@ -1716,7 +1730,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
     __pyx_t_1 = marching_cubes(__pyx_v_volume, __pyx_v_isovalue);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 22, __pyx_L1_error)
+    __PYX_ERR(0, 24, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -1729,7 +1743,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 22, __pyx_L1_error)
+      __PYX_ERR(0, 24, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -1742,15 +1756,15 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_3);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 24, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext;
@@ -1758,7 +1772,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_3 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_3)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
     __pyx_t_5 = NULL;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L4_unpacking_done;
@@ -1766,7 +1780,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 22, __pyx_L1_error)
+    __PYX_ERR(0, 24, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_verts = __pyx_t_2;
@@ -1774,33 +1788,33 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_faces = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_mcubes.pyx":23
+  /* "_mcubes.pyx":25
  * 
  *     verts, faces = c_marching_cubes(volume, isovalue)
  *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     faces.shape = (-1, 3)
  *     return verts, faces
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple_) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple_) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
-  /* "_mcubes.pyx":24
+  /* "_mcubes.pyx":26
  *     verts, faces = c_marching_cubes(volume, isovalue)
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     return verts, faces
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__2) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
 
-  /* "_mcubes.pyx":25
+  /* "_mcubes.pyx":27
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)
  *     return verts, faces             # <<<<<<<<<<<<<<
  * 
- * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):
+ * def marching_cubes2(np.ndarray volume, float isovalue):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_verts);
   __Pyx_GIVEREF(__pyx_v_verts);
@@ -1812,7 +1826,7 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_mcubes.pyx":20
+  /* "_mcubes.pyx":22
  *     cdef object c_marching_cubes_func "marching_cubes_func"(tuple, tuple, int, int, int, object, double) except +
  * 
  * def marching_cubes(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
@@ -1836,7 +1850,445 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "_mcubes.pyx":27
+/* "_mcubes.pyx":29
+ *     return verts, faces
+ * 
+ * def marching_cubes2(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7_mcubes_3marching_cubes2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7_mcubes_2marching_cubes2[] = "marching_cubes2(ndarray volume, float isovalue)";
+static PyMethodDef __pyx_mdef_7_mcubes_3marching_cubes2 = {"marching_cubes2", (PyCFunction)__pyx_pw_7_mcubes_3marching_cubes2, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7_mcubes_2marching_cubes2};
+static PyObject *__pyx_pw_7_mcubes_3marching_cubes2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyArrayObject *__pyx_v_volume = 0;
+  float __pyx_v_isovalue;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("marching_cubes2 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_volume,&__pyx_n_s_isovalue,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_volume)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_isovalue)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("marching_cubes2", 1, 2, 2, 1); __PYX_ERR(0, 29, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes2") < 0)) __PYX_ERR(0, 29, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_volume = ((PyArrayObject *)values[0]);
+    __pyx_v_isovalue = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_isovalue == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("marching_cubes2", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 29, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("_mcubes.marching_cubes2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_volume), __pyx_ptype_5numpy_ndarray, 1, "volume", 0))) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7_mcubes_2marching_cubes2(__pyx_self, __pyx_v_volume, __pyx_v_isovalue);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7_mcubes_2marching_cubes2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_volume, float __pyx_v_isovalue) {
+  PyObject *__pyx_v_verts = NULL;
+  PyObject *__pyx_v_faces = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *(*__pyx_t_5)(PyObject *);
+  __Pyx_RefNannySetupContext("marching_cubes2", 0);
+
+  /* "_mcubes.pyx":31
+ * def marching_cubes2(np.ndarray volume, float isovalue):
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)             # <<<<<<<<<<<<<<
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)
+ */
+  try {
+    __pyx_t_1 = marching_cubes2(__pyx_v_volume, __pyx_v_isovalue);
+  } catch(...) {
+    __Pyx_CppExn2PyErr();
+    __PYX_ERR(0, 31, __pyx_L1_error)
+  }
+  __Pyx_GOTREF(__pyx_t_1);
+  if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
+    PyObject* sequence = __pyx_t_1;
+    #if !CYTHON_COMPILING_IN_PYPY
+    Py_ssize_t size = Py_SIZE(sequence);
+    #else
+    Py_ssize_t size = PySequence_Size(sequence);
+    #endif
+    if (unlikely(size != 2)) {
+      if (size > 2) __Pyx_RaiseTooManyValuesError(2);
+      else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
+      __PYX_ERR(0, 31, __pyx_L1_error)
+    }
+    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    if (likely(PyTuple_CheckExact(sequence))) {
+      __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
+      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1); 
+    } else {
+      __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
+      __pyx_t_3 = PyList_GET_ITEM(sequence, 1); 
+    }
+    __Pyx_INCREF(__pyx_t_2);
+    __Pyx_INCREF(__pyx_t_3);
+    #else
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    #endif
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  } else {
+    Py_ssize_t index = -1;
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 31, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext;
+    index = 0; __pyx_t_2 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_2);
+    index = 1; __pyx_t_3 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_3)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_3);
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+    __pyx_t_5 = NULL;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    goto __pyx_L4_unpacking_done;
+    __pyx_L3_unpacking_failed:;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = NULL;
+    if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
+    __PYX_ERR(0, 31, __pyx_L1_error)
+    __pyx_L4_unpacking_done:;
+  }
+  __pyx_v_verts = __pyx_t_2;
+  __pyx_t_2 = 0;
+  __pyx_v_faces = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "_mcubes.pyx":32
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     faces.shape = (-1, 3)
+ *     return verts, faces
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple__3) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
+
+  /* "_mcubes.pyx":33
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     return verts, faces
+ * 
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__4) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
+
+  /* "_mcubes.pyx":34
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)
+ *     return verts, faces             # <<<<<<<<<<<<<<
+ * 
+ * def marching_cubes3(np.ndarray volume, float isovalue):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_v_verts);
+  __Pyx_GIVEREF(__pyx_v_verts);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_verts);
+  __Pyx_INCREF(__pyx_v_faces);
+  __Pyx_GIVEREF(__pyx_v_faces);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_faces);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "_mcubes.pyx":29
+ *     return verts, faces
+ * 
+ * def marching_cubes2(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_mcubes.marching_cubes2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_verts);
+  __Pyx_XDECREF(__pyx_v_faces);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_mcubes.pyx":36
+ *     return verts, faces
+ * 
+ * def marching_cubes3(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7_mcubes_5marching_cubes3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7_mcubes_4marching_cubes3[] = "marching_cubes3(ndarray volume, float isovalue)";
+static PyMethodDef __pyx_mdef_7_mcubes_5marching_cubes3 = {"marching_cubes3", (PyCFunction)__pyx_pw_7_mcubes_5marching_cubes3, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7_mcubes_4marching_cubes3};
+static PyObject *__pyx_pw_7_mcubes_5marching_cubes3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyArrayObject *__pyx_v_volume = 0;
+  float __pyx_v_isovalue;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("marching_cubes3 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_volume,&__pyx_n_s_isovalue,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_volume)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_isovalue)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("marching_cubes3", 1, 2, 2, 1); __PYX_ERR(0, 36, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes3") < 0)) __PYX_ERR(0, 36, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_volume = ((PyArrayObject *)values[0]);
+    __pyx_v_isovalue = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_isovalue == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 36, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("marching_cubes3", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 36, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("_mcubes.marching_cubes3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_volume), __pyx_ptype_5numpy_ndarray, 1, "volume", 0))) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7_mcubes_4marching_cubes3(__pyx_self, __pyx_v_volume, __pyx_v_isovalue);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7_mcubes_4marching_cubes3(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_volume, float __pyx_v_isovalue) {
+  PyObject *__pyx_v_verts = NULL;
+  PyObject *__pyx_v_faces = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *(*__pyx_t_5)(PyObject *);
+  __Pyx_RefNannySetupContext("marching_cubes3", 0);
+
+  /* "_mcubes.pyx":38
+ * def marching_cubes3(np.ndarray volume, float isovalue):
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)             # <<<<<<<<<<<<<<
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)
+ */
+  try {
+    __pyx_t_1 = marching_cubes3(__pyx_v_volume, __pyx_v_isovalue);
+  } catch(...) {
+    __Pyx_CppExn2PyErr();
+    __PYX_ERR(0, 38, __pyx_L1_error)
+  }
+  __Pyx_GOTREF(__pyx_t_1);
+  if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
+    PyObject* sequence = __pyx_t_1;
+    #if !CYTHON_COMPILING_IN_PYPY
+    Py_ssize_t size = Py_SIZE(sequence);
+    #else
+    Py_ssize_t size = PySequence_Size(sequence);
+    #endif
+    if (unlikely(size != 2)) {
+      if (size > 2) __Pyx_RaiseTooManyValuesError(2);
+      else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
+      __PYX_ERR(0, 38, __pyx_L1_error)
+    }
+    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    if (likely(PyTuple_CheckExact(sequence))) {
+      __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
+      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1); 
+    } else {
+      __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
+      __pyx_t_3 = PyList_GET_ITEM(sequence, 1); 
+    }
+    __Pyx_INCREF(__pyx_t_2);
+    __Pyx_INCREF(__pyx_t_3);
+    #else
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    #endif
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  } else {
+    Py_ssize_t index = -1;
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext;
+    index = 0; __pyx_t_2 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_2);
+    index = 1; __pyx_t_3 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_3)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_3);
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+    __pyx_t_5 = NULL;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    goto __pyx_L4_unpacking_done;
+    __pyx_L3_unpacking_failed:;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = NULL;
+    if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
+    __PYX_ERR(0, 38, __pyx_L1_error)
+    __pyx_L4_unpacking_done:;
+  }
+  __pyx_v_verts = __pyx_t_2;
+  __pyx_t_2 = 0;
+  __pyx_v_faces = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "_mcubes.pyx":39
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     faces.shape = (-1, 3)
+ *     return verts, faces
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple__5) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+
+  /* "_mcubes.pyx":40
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     return verts, faces
+ * 
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__6) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+
+  /* "_mcubes.pyx":41
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)
+ *     return verts, faces             # <<<<<<<<<<<<<<
+ * 
+ * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_v_verts);
+  __Pyx_GIVEREF(__pyx_v_verts);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_verts);
+  __Pyx_INCREF(__pyx_v_faces);
+  __Pyx_GIVEREF(__pyx_v_faces);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_faces);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "_mcubes.pyx":36
+ *     return verts, faces
+ * 
+ * def marching_cubes3(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_mcubes.marching_cubes3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_verts);
+  __Pyx_XDECREF(__pyx_v_faces);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_mcubes.pyx":43
  *     return verts, faces
  * 
  * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):             # <<<<<<<<<<<<<<
@@ -1845,10 +2297,10 @@ static PyObject *__pyx_pf_7_mcubes_marching_cubes(CYTHON_UNUSED PyObject *__pyx_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7_mcubes_3marching_cubes_func(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7_mcubes_2marching_cubes_func[] = "marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, f, double isovalue)";
-static PyMethodDef __pyx_mdef_7_mcubes_3marching_cubes_func = {"marching_cubes_func", (PyCFunction)__pyx_pw_7_mcubes_3marching_cubes_func, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7_mcubes_2marching_cubes_func};
-static PyObject *__pyx_pw_7_mcubes_3marching_cubes_func(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_7_mcubes_7marching_cubes_func(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7_mcubes_6marching_cubes_func[] = "marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, f, double isovalue)";
+static PyMethodDef __pyx_mdef_7_mcubes_7marching_cubes_func = {"marching_cubes_func", (PyCFunction)__pyx_pw_7_mcubes_7marching_cubes_func, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7_mcubes_6marching_cubes_func};
+static PyObject *__pyx_pw_7_mcubes_7marching_cubes_func(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_lower = 0;
   PyObject *__pyx_v_upper = 0;
   int __pyx_v_numx;
@@ -1892,41 +2344,41 @@ static PyObject *__pyx_pw_7_mcubes_3marching_cubes_func(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_upper)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 1); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 1); __PYX_ERR(0, 43, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_numx)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 2); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 2); __PYX_ERR(0, 43, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_numy)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 3); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 3); __PYX_ERR(0, 43, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_numz)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 4); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 4); __PYX_ERR(0, 43, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_f)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 5); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 5); __PYX_ERR(0, 43, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_isovalue)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 6); __PYX_ERR(0, 27, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, 6); __PYX_ERR(0, 43, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes_func") < 0)) __PYX_ERR(0, 27, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "marching_cubes_func") < 0)) __PYX_ERR(0, 43, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 7) {
       goto __pyx_L5_argtuple_error;
@@ -1941,23 +2393,23 @@ static PyObject *__pyx_pw_7_mcubes_3marching_cubes_func(PyObject *__pyx_self, Py
     }
     __pyx_v_lower = ((PyObject*)values[0]);
     __pyx_v_upper = ((PyObject*)values[1]);
-    __pyx_v_numx = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_numx == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
-    __pyx_v_numy = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_numy == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
-    __pyx_v_numz = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_numz == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
+    __pyx_v_numx = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_numx == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
+    __pyx_v_numy = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_numy == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
+    __pyx_v_numz = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_numz == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
     __pyx_v_f = values[5];
-    __pyx_v_isovalue = __pyx_PyFloat_AsDouble(values[6]); if (unlikely((__pyx_v_isovalue == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
+    __pyx_v_isovalue = __pyx_PyFloat_AsDouble(values[6]); if (unlikely((__pyx_v_isovalue == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 27, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("marching_cubes_func", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 43, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_mcubes.marching_cubes_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_lower), (&PyTuple_Type), 1, "lower", 1))) __PYX_ERR(0, 27, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_upper), (&PyTuple_Type), 1, "upper", 1))) __PYX_ERR(0, 27, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7_mcubes_2marching_cubes_func(__pyx_self, __pyx_v_lower, __pyx_v_upper, __pyx_v_numx, __pyx_v_numy, __pyx_v_numz, __pyx_v_f, __pyx_v_isovalue);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_lower), (&PyTuple_Type), 1, "lower", 1))) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_upper), (&PyTuple_Type), 1, "upper", 1))) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7_mcubes_6marching_cubes_func(__pyx_self, __pyx_v_lower, __pyx_v_upper, __pyx_v_numx, __pyx_v_numy, __pyx_v_numz, __pyx_v_f, __pyx_v_isovalue);
 
   /* function exit code */
   goto __pyx_L0;
@@ -1968,7 +2420,7 @@ static PyObject *__pyx_pw_7_mcubes_3marching_cubes_func(PyObject *__pyx_self, Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_lower, PyObject *__pyx_v_upper, int __pyx_v_numx, int __pyx_v_numy, int __pyx_v_numz, PyObject *__pyx_v_f, double __pyx_v_isovalue) {
+static PyObject *__pyx_pf_7_mcubes_6marching_cubes_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_lower, PyObject *__pyx_v_upper, int __pyx_v_numx, int __pyx_v_numy, int __pyx_v_numz, PyObject *__pyx_v_f, double __pyx_v_isovalue) {
   PyObject *__pyx_v_verts = NULL;
   PyObject *__pyx_v_faces = NULL;
   PyObject *__pyx_r = NULL;
@@ -1980,7 +2432,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
   PyObject *(*__pyx_t_5)(PyObject *);
   __Pyx_RefNannySetupContext("marching_cubes_func", 0);
 
-  /* "_mcubes.pyx":29
+  /* "_mcubes.pyx":45
  * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):
  * 
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)             # <<<<<<<<<<<<<<
@@ -1991,7 +2443,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
     __pyx_t_1 = marching_cubes_func(__pyx_v_lower, __pyx_v_upper, __pyx_v_numx, __pyx_v_numy, __pyx_v_numz, __pyx_v_f, __pyx_v_isovalue);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 29, __pyx_L1_error)
+    __PYX_ERR(0, 45, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -2004,7 +2456,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 29, __pyx_L1_error)
+      __PYX_ERR(0, 45, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -2017,15 +2469,15 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_3);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext;
@@ -2033,7 +2485,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_3 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_3)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 2) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
     __pyx_t_5 = NULL;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L4_unpacking_done;
@@ -2041,7 +2493,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 29, __pyx_L1_error)
+    __PYX_ERR(0, 45, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_verts = __pyx_t_2;
@@ -2049,30 +2501,30 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
   __pyx_v_faces = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_mcubes.pyx":30
+  /* "_mcubes.pyx":46
  * 
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     faces.shape = (-1, 3)
  *     return verts, faces
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple__3) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_verts, __pyx_n_s_shape, __pyx_tuple__7) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "_mcubes.pyx":31
+  /* "_mcubes.pyx":47
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     return verts, faces
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__4) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_faces, __pyx_n_s_shape, __pyx_tuple__8) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
 
-  /* "_mcubes.pyx":32
+  /* "_mcubes.pyx":48
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)
  *     return verts, faces             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_verts);
   __Pyx_GIVEREF(__pyx_v_verts);
@@ -2084,7 +2536,7 @@ static PyObject *__pyx_pf_7_mcubes_2marching_cubes_func(CYTHON_UNUSED PyObject *
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_mcubes.pyx":27
+  /* "_mcubes.pyx":43
  *     return verts, faces
  * 
  * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):             # <<<<<<<<<<<<<<
@@ -2277,7 +2729,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 235, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 235, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2333,7 +2785,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  * 
  *             info.buf = PyArray_DATA(self)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 239, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2642,7 +3094,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 276, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3531,7 +3983,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 823, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 823, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3599,7 +4051,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 827, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 827, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3708,7 +4160,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 847, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 847, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_Raise(__pyx_t_4, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -4388,7 +4840,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1013, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1013, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -4517,7 +4969,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1019, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1019, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -4643,7 +5095,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1025, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1025, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -4741,6 +5193,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_lower, __pyx_k_lower, sizeof(__pyx_k_lower), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_marching_cubes, __pyx_k_marching_cubes, sizeof(__pyx_k_marching_cubes), 0, 0, 1, 1},
+  {&__pyx_n_s_marching_cubes2, __pyx_k_marching_cubes2, sizeof(__pyx_k_marching_cubes2), 0, 0, 1, 1},
+  {&__pyx_n_s_marching_cubes3, __pyx_k_marching_cubes3, sizeof(__pyx_k_marching_cubes3), 0, 0, 1, 1},
   {&__pyx_n_s_marching_cubes_func, __pyx_k_marching_cubes_func, sizeof(__pyx_k_marching_cubes_func), 0, 0, 1, 1},
   {&__pyx_n_s_mcubes, __pyx_k_mcubes, sizeof(__pyx_k_mcubes), 0, 0, 1, 1},
   {&__pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_k_mcubes_src__mcubes_pyx, sizeof(__pyx_k_mcubes_src__mcubes_pyx), 0, 0, 1, 0},
@@ -4776,48 +5230,92 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "_mcubes.pyx":23
+  /* "_mcubes.pyx":25
  * 
  *     verts, faces = c_marching_cubes(volume, isovalue)
  *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     faces.shape = (-1, 3)
  *     return verts, faces
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "_mcubes.pyx":24
+  /* "_mcubes.pyx":26
  *     verts, faces = c_marching_cubes(volume, isovalue)
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     return verts, faces
  * 
  */
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "_mcubes.pyx":30
+  /* "_mcubes.pyx":32
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     faces.shape = (-1, 3)
+ *     return verts, faces
+ */
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+
+  /* "_mcubes.pyx":33
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     return verts, faces
+ * 
+ */
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
+  /* "_mcubes.pyx":39
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     faces.shape = (-1, 3)
+ *     return verts, faces
+ */
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+
+  /* "_mcubes.pyx":40
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ *     verts.shape = (-1, 3)
+ *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
+ *     return verts, faces
+ * 
+ */
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+
+  /* "_mcubes.pyx":46
  * 
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  *     verts.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     faces.shape = (-1, 3)
  *     return verts, faces
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_tuple__7 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "_mcubes.pyx":31
+  /* "_mcubes.pyx":47
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  *     verts.shape = (-1, 3)
  *     faces.shape = (-1, 3)             # <<<<<<<<<<<<<<
  *     return verts, faces
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_3); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":235
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
@@ -4826,9 +5324,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 235, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 235, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":239
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
@@ -4837,9 +5335,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             info.buf = PyArray_DATA(self)
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 239, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 239, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *                 if ((descr.byteorder == c'>' and little_endian) or
@@ -4848,9 +5346,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(1, 276, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 276, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  * 
@@ -4859,9 +5357,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 823, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 823, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *         if ((child.byteorder == c'>' and little_endian) or
@@ -4870,9 +5368,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 827, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 827, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":847
  *             t = child.type_num
@@ -4881,9 +5379,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 847, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 847, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":1013
  *         _import_array()
@@ -4892,9 +5390,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 1013, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 1013, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":1019
  *         _import_umath()
@@ -4903,42 +5401,66 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 1019, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 1019, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "../dev-box/pip/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":1025
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 1025, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 1025, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "_mcubes.pyx":20
+  /* "_mcubes.pyx":22
  *     cdef object c_marching_cubes_func "marching_cubes_func"(tuple, tuple, int, int, int, object, double) except +
  * 
  * def marching_cubes(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
  * 
  *     verts, faces = c_marching_cubes(volume, isovalue)
  */
-  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_volume, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(4, __pyx_n_s_volume, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 22, __pyx_L1_error)
 
-  /* "_mcubes.pyx":27
+  /* "_mcubes.pyx":29
+ *     return verts, faces
+ * 
+ * def marching_cubes2(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ */
+  __pyx_tuple__20 = PyTuple_Pack(4, __pyx_n_s_volume, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes2, 29, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 29, __pyx_L1_error)
+
+  /* "_mcubes.pyx":36
+ *     return verts, faces
+ * 
+ * def marching_cubes3(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ */
+  __pyx_tuple__22 = PyTuple_Pack(4, __pyx_n_s_volume, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes3, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 36, __pyx_L1_error)
+
+  /* "_mcubes.pyx":43
  *     return verts, faces
  * 
  * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):             # <<<<<<<<<<<<<<
  * 
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  */
-  __pyx_tuple__16 = PyTuple_Pack(9, __pyx_n_s_lower, __pyx_n_s_upper, __pyx_n_s_numx, __pyx_n_s_numy, __pyx_n_s_numz, __pyx_n_s_f, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 27, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(7, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes_func, 27, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(9, __pyx_n_s_lower, __pyx_n_s_upper, __pyx_n_s_numx, __pyx_n_s_numy, __pyx_n_s_numz, __pyx_n_s_f, __pyx_n_s_isovalue, __pyx_n_s_verts, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(7, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mcubes_src__mcubes_pyx, __pyx_n_s_marching_cubes_func, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5134,28 +5656,52 @@ static int __pyx_pymod_exec__mcubes(PyObject *__pyx_pyinit_module)
  */
   __pyx_t_2 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 14, __pyx_L1_error)
 
-  /* "_mcubes.pyx":20
+  /* "_mcubes.pyx":22
  *     cdef object c_marching_cubes_func "marching_cubes_func"(tuple, tuple, int, int, int, object, double) except +
  * 
  * def marching_cubes(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
  * 
  *     verts, faces = c_marching_cubes(volume, isovalue)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_1marching_cubes, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_1marching_cubes, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes, __pyx_t_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes, __pyx_t_1) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_mcubes.pyx":27
+  /* "_mcubes.pyx":29
+ *     return verts, faces
+ * 
+ * def marching_cubes2(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes2(volume, isovalue)
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_3marching_cubes2, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes2, __pyx_t_1) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "_mcubes.pyx":36
+ *     return verts, faces
+ * 
+ * def marching_cubes3(np.ndarray volume, float isovalue):             # <<<<<<<<<<<<<<
+ * 
+ *     verts, faces = c_marching_cubes3(volume, isovalue)
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_5marching_cubes3, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes3, __pyx_t_1) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "_mcubes.pyx":43
  *     return verts, faces
  * 
  * def marching_cubes_func(tuple lower, tuple upper, int numx, int numy, int numz, object f, double isovalue):             # <<<<<<<<<<<<<<
  * 
  *     verts, faces = c_marching_cubes_func(lower, upper, numx, numy, numz, f, isovalue)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_3marching_cubes_func, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7_mcubes_7marching_cubes_func, NULL, __pyx_n_s_mcubes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes_func, __pyx_t_1) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_marching_cubes_func, __pyx_t_1) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "_mcubes.pyx":2
